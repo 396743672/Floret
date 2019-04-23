@@ -20,10 +20,15 @@ import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 
 
+
 /**
- * Miscellaneous utilities for web applications.
+ * 项目名:    Floret
+ * 包名       org.azhon.common.utils
+ * 文件名:    WebUtil
+ * 创建时间:  2019/3/4 on 下午2:39
+ * 描述:     TODO Miscellaneous utilities for web applications.
  *
- * @author L.cm
+ * @author ZJB
  */
 @Slf4j
 public class WebUtil extends org.springframework.web.util.WebUtils {
@@ -184,7 +189,7 @@ public class WebUtil extends org.springframework.web.util.WebUtils {
         try {
             return getRequestStr(request);
         } catch (Exception ex) {
-            return StringPool.EMPTY;
+            return "";
         }
     }
 
@@ -238,7 +243,7 @@ public class WebUtil extends org.springframework.web.util.WebUtils {
     public static String getRequestStr(HttpServletRequest request, byte[] buffer) throws IOException {
         String charEncoding = request.getCharacterEncoding();
         if (charEncoding == null) {
-            charEncoding = StringPool.UTF_8;
+            charEncoding = "UTF-8";
         }
         String str = new String(buffer, charEncoding).trim();
         if (StringUtil.isBlank(str)) {

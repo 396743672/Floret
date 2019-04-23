@@ -9,8 +9,8 @@ import java.util.Map;
 
 
 /**
- * 项目名:    ziding-whp
- * 包名       com.ziding.common.utils
+ * 项目名:    Floret
+ * 包名       org.azhon.common.utils
  * 文件名:    BeanUtil
  * 创建时间:  2019/3/4 on 下午2:39
  * 描述:     TODO 集合工具类

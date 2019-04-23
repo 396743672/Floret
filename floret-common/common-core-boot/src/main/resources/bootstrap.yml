@@ -1,0 +1,44 @@
+# mybatis
+mybatis-plus:
+  mapper-locations: classpath:org/azhon/*/mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: org.azhon.**.entity
+  global-config:
+    #刷新mapper 调试神器
+    refresh: true
+    # 关闭MP3.0自带的banner
+    banner: true
+    db-config:
+      #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+      id-type: 0
+      #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+      field-strategy: 2
+      #驼峰下划线转换
+      column-underline: true
+      # 逻辑删除配置
+      # 逻辑删除全局值（1表示已删除，Mybatis Plus的默认配置）
+      logic-delete-value: 1
+      # 逻辑未删除全局值（0表示未删除，Mybatis Plus的默认配置）
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#swagger配置信息
+swagger:
+  title: Floret接口文档系统
+  description: Floret接口文档系统
+  version: 1.0.0
+  license: Powered By azhon
+
+azhon:
+  async:
+    #异步核心线程数，默认：2
+    corePoolSize: 2
+    #异步最大线程数，默认：50
+    maxPoolSize: 50
+    #队列容量，默认：10000
+    queueCapacity: 10000
+    #线程存活时间，默认：300
+    keepAliveSeconds: 200

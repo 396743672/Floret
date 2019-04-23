@@ -1,12 +1,13 @@
 package org.azhon.common.mybaits.support;
 
 
-import com.baomidou.mybatisplus.core.conditions.interfaces.Func;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.ziding.common.utils.BeanUtil;
-import com.ziding.common.utils.StringUtil;
+
+import org.azhon.common.utils.BeanUtil;
+import org.azhon.common.utils.ObjectUtil;
+import org.azhon.common.utils.StringUtil;
 
 import java.util.Map;
 
@@ -29,9 +30,9 @@ public class Condition {
      * @return
      */
     public static <T> IPage<T> getPage(Query query) {
-        Page<T> page = new Page<>(Func.toInt(query.getCurrent(), 1), Func.toInt(query.getSize(), 10));
-        page.setAsc(Func.toStrArray(query.getAscs()));
-        page.setDesc(Func.toStrArray(query.getDescs()));
+        Page<T> page = new Page<>(query.getCurrent(), query.getSize());
+        page.setAsc(null == query.getAscs() ? new String[]{} : query.getAscs().split(","));
+        page.setDesc(null == query.getDescs() ? new String[]{} : query.getAscs().split(","));
         return page;
     }
 
@@ -59,9 +60,9 @@ public class Condition {
         query.remove("size");
         QueryWrapper<T> qw = new QueryWrapper<>();
         qw.setEntity(BeanUtil.newInstance(clazz));
-        if (Func.isNotEmpty(query)) {
+        if (!ObjectUtil.isEmpty(query)) {
             query.forEach((k, v) -> {
-                if (Func.isNotEmpty(v)) {
+                if (!ObjectUtil.isEmpty(v)) {
                     qw.like(StringUtil.humpToUnderline(k), v);
                 }
             });

@@ -11,8 +11,8 @@ import java.util.stream.Stream;
 
 
 /**
- * 项目名:    ziding-whp
- * 包名       com.ziding.common.utils
+ * 项目名:    Floret
+ * 包名       org.azhon.common.utils
  * 文件名:    StringUtil
  * 创建时间:  2019/3/4 on 下午2:39
  * 描述:     TODO 继承自Spring util的工具类，减少jar依赖
@@ -163,7 +163,7 @@ public class StringUtil extends org.springframework.util.StringUtils {
      */
     public static String randomUUID() {
         ThreadLocalRandom random = ThreadLocalRandom.current();
-        return new UUID(random.nextLong(), random.nextLong()).toString().replace(StringPool.DASH, StringPool.EMPTY);
+        return new UUID(random.nextLong(), random.nextLong()).toString().replace("-", "");
     }
 
 
@@ -241,7 +241,7 @@ public class StringUtil extends org.springframework.util.StringUtils {
      */
     public static String sub(CharSequence str, int fromIndex, int toIndex) {
         if (isEmpty(str)) {
-            return StringPool.EMPTY;
+            return "";
         }
         int len = str.length();
 
@@ -270,7 +270,7 @@ public class StringUtil extends org.springframework.util.StringUtils {
         }
 
         if (fromIndex == toIndex) {
-            return StringPool.EMPTY;
+            return "";
         }
 
         return str.toString().substring(fromIndex, toIndex);
@@ -309,7 +309,7 @@ public class StringUtil extends org.springframework.util.StringUtils {
         final String str = string.toString();
         final String sep = separator.toString();
         if (sep.isEmpty()) {
-            return StringPool.EMPTY;
+            return "";
         }
         final int pos = isLastSeparator ? str.lastIndexOf(sep) : str.indexOf(sep);
         if (pos == INDEX_NOT_FOUND) {
@@ -347,13 +347,13 @@ public class StringUtil extends org.springframework.util.StringUtils {
             return null == string ? null : string.toString();
         }
         if (separator == null) {
-            return StringPool.EMPTY;
+            return "";
         }
         final String str = string.toString();
         final String sep = separator.toString();
         final int pos = isLastSeparator ? str.lastIndexOf(sep) : str.indexOf(sep);
         if (pos == INDEX_NOT_FOUND) {
-            return StringPool.EMPTY;
+            return "";
         }
         return str.substring(pos + separator.length());
     }
@@ -433,7 +433,7 @@ public class StringUtil extends org.springframework.util.StringUtils {
      */
     public static String removePrefix(CharSequence str, CharSequence prefix) {
         if (isEmpty(str) || isEmpty(prefix)) {
-            return StringPool.EMPTY;
+            return "";
         }
 
         final String str2 = str.toString();
@@ -452,7 +452,7 @@ public class StringUtil extends org.springframework.util.StringUtils {
      */
     public static String removePrefixIgnoreCase(CharSequence str, CharSequence prefix) {
         if (isEmpty(str) || isEmpty(prefix)) {
-            return StringPool.EMPTY;
+            return "";
         }
 
         final String str2 = str.toString();
@@ -471,7 +471,7 @@ public class StringUtil extends org.springframework.util.StringUtils {
      */
     public static String removeSuffix(CharSequence str, CharSequence suffix) {
         if (isEmpty(str) || isEmpty(suffix)) {
-            return StringPool.EMPTY;
+            return "";
         }
 
         final String str2 = str.toString();
@@ -501,7 +501,7 @@ public class StringUtil extends org.springframework.util.StringUtils {
      */
     public static String removeSuffixIgnoreCase(CharSequence str, CharSequence suffix) {
         if (isEmpty(str) || isEmpty(suffix)) {
-            return StringPool.EMPTY;
+            return "";
         }
 
         final String str2 = str.toString();
@@ -519,9 +519,9 @@ public class StringUtil extends org.springframework.util.StringUtils {
      */
     public static String lowerFirst(String str) {
         char firstChar = str.charAt(0);
-        if (firstChar >= StringPool.U_A && firstChar <= StringPool.U_Z) {
+        if (firstChar >= 'A' && firstChar <= 'Z') {
             char[] arr = str.toCharArray();
-            arr[0] += (StringPool.L_A - StringPool.U_A);
+            arr[0] += ('a' - 'A');
             return new String(arr);
         }
         return str;
@@ -535,9 +535,9 @@ public class StringUtil extends org.springframework.util.StringUtils {
      */
     public static String upperFirst(String str) {
         char firstChar = str.charAt(0);
-        if (firstChar >= StringPool.L_A && firstChar <= StringPool.L_Z) {
+        if (firstChar >= 'a' && firstChar <= 'z') {
             char[] arr = str.toCharArray();
-            arr[0] -= (StringPool.L_A - StringPool.U_A);
+            arr[0] -= ('a' - 'A');
             return new String(arr);
         }
         return str;

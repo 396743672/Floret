@@ -1,9 +1,8 @@
 package org.azhon.common.utils;
 
 
-import com.ziding.common.support.BaseBeanCopier;
-import com.ziding.common.support.BeanProperty;
-
+import org.azhon.common.support.BaseBeanCopier;
+import org.azhon.common.support.BeanProperty;
 import org.springframework.beans.BeansException;
 import org.springframework.cglib.beans.BeanGenerator;
 import org.springframework.cglib.beans.BeanMap;
@@ -17,8 +16,8 @@ import java.util.Map;
 
 
 /**
- * 项目名:    ziding-whp
- * 包名       com.ziding.common.utils
+ * 项目名:    Floret
+ * 包名       org.azhon.common.utils
  * 文件名:    BeanUtil
  * 创建时间:  2019/3/4 on 下午2:39
  * 描述:     TODO 实体工具类

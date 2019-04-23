@@ -12,8 +12,8 @@ import okhttp3.Response;
 
 
 /**
- * 项目名:    ziding-whp
- * 包名       com.ziding.common.utils
+ * 项目名:    Floret
+ * 包名       org.azhon.common.utils
  * 文件名:    OkHttpUtil
  * 创建时间:  2019/3/4 on 下午2:39
  * 描述:     TODO Http请求工具类

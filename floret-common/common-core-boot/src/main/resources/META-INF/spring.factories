@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.azhon.common.boot.config.ExecutorConfiguration,\
+org.azhon.common.boot.config.RedisConfiguration,\
+org.azhon.common.boot.config.RetryConfiguration,\
+org.azhon.common.boot.config.WebConfiguration

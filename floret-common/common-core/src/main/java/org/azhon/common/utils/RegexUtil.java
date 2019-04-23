@@ -7,8 +7,8 @@ import java.util.regex.Pattern;
 
 
 /**
- * 项目名:    ziding-whp
- * 包名       com.ziding.common.utils
+ * 项目名:    Floret
+ * 包名       org.azhon.common.utils
  * 文件名:    RegexUtil
  * 创建时间:  2019/3/4 on 下午2:39
  * 描述:     TODO 正则表达式工具
