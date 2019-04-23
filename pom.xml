@@ -7,7 +7,7 @@
     <groupId>org.azhon</groupId>
     <artifactId>floret</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <modules>
         <module>floret-gateway</module>
         <module>floret-auth</module>
@@ -17,6 +17,7 @@
 
     <!--属性-->
     <properties>
+        <floret.version>1.0.0</floret.version>
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -36,16 +37,8 @@
         <hibernate-validator.version>5.3.6.Final</hibernate-validator.version>
         <fastjson.verson>1.2.47</fastjson.verson>
         <okhttp.version>3.13.1</okhttp.version>
-
-        <jjwt.version>0.9.0</jjwt.version>
-
-        <hutool.version>3.3.2</hutool.version>
         <commons-io.version>2.6</commons-io.version>
-        <jasypt.version>1.18</jasypt.version>
-        <mybatis.plus.version>3.1.0</mybatis.plus.version>
-        <hibernate-validator.version>5.4.1.Final</hibernate-validator.version>
         <ttl.version>2.2.0</ttl.version>
-        <!--<sharding-jdbc-core-spring-boot-starter.version>2.0.1</sharding-jdbc-core-spring-boot-starter.version>-->
         <velocity-engine-core.version>2.0</velocity-engine-core.version>
         <qiniu.version>[7.2.0, 7.2.99]</qiniu.version>
         <mybatis-plus.version>3.1.0</mybatis-plus.version>
