@@ -19,6 +19,7 @@
         <module>common-core-swagger</module>
         <module>common-core-cloud</module>
         <module>common-core-security</module>
+        <module>common-core-boot</module>
     </modules>
 
 
