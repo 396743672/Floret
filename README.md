@@ -1,4 +1,4 @@
-<p align="center"><img width="220" src="icon.png"></p>
+<p align="center"><img width="220" src="logo.png"></p>
 
 <p align="center">
   <a href="https://github.com/vuejs/vue">
