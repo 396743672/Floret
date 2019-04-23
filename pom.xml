@@ -12,6 +12,7 @@
         <module>floret-gateway</module>
         <module>floret-auth</module>
         <module>floret-common</module>
+        <module>floret-generator</module>
     </modules>
 
 
