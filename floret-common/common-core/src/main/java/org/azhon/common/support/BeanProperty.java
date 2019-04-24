@@ -4,11 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 
+
 /**
- * 项目名:    ziding-whp
- * 包名       com.ziding.common.support
+ * 项目名:    Floret
+ * 包名       org.azhon.common.support
  * 文件名:    BeanProperty
- * 创建时间:  2019/3/4 on 下午2:39
+ * 创建时间:  2019-04-24 on 09:19
  * 描述:     TODO Bean属性
  *
  * @author ZJB

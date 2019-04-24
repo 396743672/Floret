@@ -1,8 +1,7 @@
 package org.azhon.common.support;
 
 
-import com.ziding.common.utils.BeanUtil;
-
+import org.azhon.common.utils.BeanUtil;
 import org.springframework.asm.ClassVisitor;
 import org.springframework.asm.Type;
 import org.springframework.cglib.core.AbstractClassGenerator;
@@ -26,12 +25,11 @@ import java.util.Map;
 
 
 /**
- * 项目名:    ziding-whp
- * 包名       com.ziding.common.support
+ * 项目名:    Floret
+ * 包名       org.azhon.common.support
  * 文件名:    BaseBeanCopier
- * 创建时间:  2019/3/4 on 下午2:39
+ * 创建时间:  2019-04-24 on 09:19
  * 描述:     TODO spring cglib 魔改
- *
  * <p>
  * 1. 支持链式 bean
  * 2. 自定义的 BeanCopier 解决 spring boot 和 cglib ClassLoader classLoader 不一致的问题

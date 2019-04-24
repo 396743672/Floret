@@ -16,10 +16,10 @@ import lombok.ToString;
 
 
 /**
- * 项目名:    ziding-whp
- * 包名       com.ziding.common.api
- * 文件名:    R
- * 创建时间:  2019/2/14 on 下午1:39
+ * 项目名:    Floret
+ * 包名       org.azhon.common.api
+ * 文件名:    IResultCode
+ * 创建时间:  2019-04-24 on 09:20
  * 描述:     TODO 统一API响应结果封装
  *
  * @author ZJB
@@ -64,7 +64,6 @@ public class R<T> implements Serializable {
         this.msg = msg;
         this.success = ResultCode.SUCCESS.code == code;
     }
-
 
 
     /**
@@ -181,8 +180,6 @@ public class R<T> implements Serializable {
     public static <T> R<T> fail(IResultCode resultCode, String msg) {
         return new R<>(resultCode, msg);
     }
-
-
 
 
     public static <T> R<T> noData() {
