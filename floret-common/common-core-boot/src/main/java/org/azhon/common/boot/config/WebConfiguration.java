@@ -17,8 +17,6 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.Resource;
-
 
 /**
  * 项目名:    Floret
@@ -33,13 +31,11 @@ import javax.annotation.Resource;
 @EnableWebMvc
 public class WebConfiguration implements WebMvcConfigurer {
 
-    @Resource
-    private CorsInterceptor corsInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //处理option请求
-        registry.addInterceptor(corsInterceptor).addPathPatterns("/**");
+        registry.addInterceptor(new CorsInterceptor()).addPathPatterns("/**");
     }
 
     @Override

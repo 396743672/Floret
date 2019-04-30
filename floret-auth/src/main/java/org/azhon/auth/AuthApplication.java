@@ -1,5 +1,8 @@
 package org.azhon.auth;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.cloud.client.SpringCloudApplication;
+
 /**
  * 项目名:    Floret
  * 包名       org.azhon.auth
@@ -9,6 +12,10 @@ package org.azhon.auth;
  *
  * @author ZJB
  */
-
+@SpringCloudApplication
 public class AuthApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(AuthApplication.class, args);
+    }
+
 }

@@ -1,3 +1,35 @@
+#spring配置
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 139.196.120.69:8848
+      config:
+        server-addr: 139.196.120.69:8848
+        file-extension: ymal
+    sentinel:
+      transport:
+        dashboard: 139.196.120.69:8858
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+  servlet:
+    multipart:
+      max-file-size: 256MB
+      max-request-size: 1024MB
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      connection-test-query: SELECT 1 FROM DUAL
+      connection-timeout: 30000
+      maximum-pool-size: 5
+      max-lifetime: 1800000
+      minimum-idle: 1
 # mybatis
 mybatis-plus:
   mapper-locations: classpath:org/azhon/*/mapper/*Mapper.xml

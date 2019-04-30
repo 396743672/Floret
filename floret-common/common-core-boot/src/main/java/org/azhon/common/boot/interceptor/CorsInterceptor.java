@@ -1,7 +1,6 @@
 package org.azhon.common.boot.interceptor;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +17,7 @@ import io.swagger.models.HttpMethod;
  *
  * @author ZJB
  */
-@Component
+//@Component
 public class CorsInterceptor implements HandlerInterceptor {
 
 
