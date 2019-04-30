@@ -9,13 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>floret-auth</artifactId>
-    <dependencies>
-        <dependency>
-            <groupId>org.azhon</groupId>
-            <artifactId>common-core-boot</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-    </dependencies>
+    <artifactId>floret-user</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>user-api</module>
+        <module>user-dao</module>
+        <module>user-web</module>
+    </modules>
+
 
 </project>

@@ -13,6 +13,8 @@
         <module>floret-auth</module>
         <module>floret-common</module>
         <module>floret-generator</module>
+        <module>floret-user</module>
+        <module>floret-system</module>
     </modules>
 
 

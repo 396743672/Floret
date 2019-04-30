@@ -13,7 +13,7 @@
   <a href="https://spring.io/projects/spring-cloud">
     <img src="https://img.shields.io/badge/spring--cloud-Finchley.SR2-blue.svg" alt="spring-cloud">
   </a>
-  <a href="https://gitee.com/beiyoufx/soraka">
+  <a >
     <img src="https://img.shields.io/badge/license-Apache%202.0-green.svg" alt="license">
   </a>
 </p>
