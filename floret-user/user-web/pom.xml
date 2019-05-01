@@ -14,9 +14,16 @@
     <dependencies>
         <dependency>
             <groupId>org.azhon</groupId>
-            <artifactId>user-dao</artifactId>
+            <artifactId>common-core-boot</artifactId>
             <version>${floret.version}</version>
         </dependency>
     </dependencies>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
