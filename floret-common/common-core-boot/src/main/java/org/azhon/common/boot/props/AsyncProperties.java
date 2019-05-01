@@ -17,7 +17,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@ConfigurationProperties("azhon.async")
+@ConfigurationProperties("floret.async")
 public class AsyncProperties {
     /**
      * 异步核心线程数，默认：2

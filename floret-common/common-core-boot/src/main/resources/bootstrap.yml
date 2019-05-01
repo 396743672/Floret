@@ -6,7 +6,8 @@ spring:
         server-addr: 139.196.120.69:8848
       config:
         server-addr: 139.196.120.69:8848
-        file-extension: ymal
+        file-extension: yaml
+        prefix: floret
     sentinel:
       transport:
         dashboard: 139.196.120.69:8858
@@ -64,7 +65,7 @@ swagger:
   version: 1.0.0
   license: Powered By azhon
 
-azhon:
+floret:
   async:
     #异步核心线程数，默认：2
     corePoolSize: 2
