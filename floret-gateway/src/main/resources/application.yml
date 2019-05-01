@@ -1,0 +1,29 @@
+server:
+  port: 8888
+#服务名
+spring:
+  profiles:
+    active: dev
+  application:
+    name: floret-gateway
+  cloud:
+    gateway:
+      routes:
+      - id:  auth
+        uri: lb://floret-auth
+        predicates:
+        - Path=/auth/**
+        filters:
+        - StripPrefix=1
+      - id:  system
+        uri: lb://floret-system
+        predicates:
+        - Path=/system/**
+        filters:
+        - StripPrefix=1
+      - id:  user
+        uri: lb://floret-user
+        predicates:
+        - Path=/user/**
+        filters:
+        - StripPrefix=1
