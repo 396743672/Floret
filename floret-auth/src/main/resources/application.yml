@@ -5,6 +5,3 @@ spring:
     name: floret-auth
 server:
   port: 8001
-
-
-

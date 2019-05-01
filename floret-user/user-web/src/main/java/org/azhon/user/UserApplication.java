@@ -1,5 +1,8 @@
 package org.azhon.user;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.cloud.client.SpringCloudApplication;
+
 /**
  * 项目名:    Floret
  * 包名       org.azhon.user
@@ -9,6 +12,11 @@ package org.azhon.user;
  *
  * @author ZJB
  */
-
+@SpringCloudApplication
 public class UserApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(UserApplication.class, args);
+    }
+
 }

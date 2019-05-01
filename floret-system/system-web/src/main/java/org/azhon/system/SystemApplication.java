@@ -1,5 +1,8 @@
 package org.azhon.system;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.cloud.client.SpringCloudApplication;
+
 /**
  * 项目名:    Floret
  * 包名       org.azhon.system
@@ -9,6 +12,9 @@ package org.azhon.system;
  *
  * @author ZJB
  */
-
+@SpringCloudApplication
 public class SystemApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(SystemApplication.class, args);
+    }
 }
