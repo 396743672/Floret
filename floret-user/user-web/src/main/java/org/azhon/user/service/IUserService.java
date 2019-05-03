@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 
 import org.azhon.common.mybaits.base.BaseService;
 import org.azhon.user.entity.User;
+import org.azhon.user.entity.UserDetail;
 import org.azhon.user.vo.UserVO;
 
 /**
@@ -28,4 +29,5 @@ public interface IUserService extends BaseService<User> {
 	 */
 	IPage<UserVO> selectUserPage(IPage<UserVO> page, UserVO user);
 
+    UserDetail userDetail(String tenantCode, String account, String password);
 }

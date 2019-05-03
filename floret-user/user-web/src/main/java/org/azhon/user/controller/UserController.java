@@ -8,6 +8,7 @@ import org.azhon.common.mybaits.base.BaseContoller;
 import org.azhon.common.mybaits.support.Condition;
 import org.azhon.common.mybaits.support.Query;
 import org.azhon.user.entity.User;
+import org.azhon.user.entity.UserDetail;
 import org.azhon.user.service.IUserService;
 import org.azhon.user.vo.UserVO;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,56 +39,66 @@ import lombok.AllArgsConstructor;
 @Api(value = "用户表", tags = "用户表接口")
 public class UserController extends BaseContoller {
 
-	private IUserService userService;
+    private IUserService userService;
 
 
+    /**
+     * 自定义分页 用户表
+     */
+    @GetMapping("/page")
+    @ApiOperation(value = "分页", notes = "传入user", position = 3)
+    public R<IPage<UserVO>> page(UserVO user, Query query) {
+        IPage<UserVO> pages = userService.selectUserPage(Condition.getPage(query), user);
+        return R.success(pages);
+    }
 
-	/**
-	* 自定义分页 用户表
-	*/
-	@GetMapping("/page")
-	@ApiOperation(value = "分页", notes = "传入user", position = 3)
-	public R<IPage<UserVO>> page(UserVO user, Query query) {
-		IPage<UserVO> pages = userService.selectUserPage(Condition.getPage(query), user);
-		return R.success(pages);
-	}
+    /**
+     * 新增 用户表
+     */
+    @PostMapping("/save")
+    @ApiOperation(value = "新增", notes = "传入user", position = 4)
+    public R save(@Valid @RequestBody User user) {
+        return R.status(userService.save(user));
+    }
 
-	/**
-	* 新增 用户表
-	*/
-	@PostMapping("/save")
-	@ApiOperation(value = "新增", notes = "传入user", position = 4)
-	public R save(@Valid @RequestBody User user) {
-		return R.status(userService.save(user));
-	}
+    /**
+     * 修改 用户表
+     */
+    @PostMapping("/update")
+    @ApiOperation(value = "修改", notes = "传入user", position = 5)
+    public R update(@Valid @RequestBody User user) {
+        return R.status(userService.updateById(user));
+    }
 
-	/**
-	* 修改 用户表
-	*/
-	@PostMapping("/update")
-	@ApiOperation(value = "修改", notes = "传入user", position = 5)
-	public R update(@Valid @RequestBody User user) {
-		return R.status(userService.updateById(user));
-	}
+    /**
+     * 新增或修改 用户表
+     */
+    @PostMapping("/submit")
+    @ApiOperation(value = "新增或修改", notes = "传入user", position = 6)
+    public R submit(@Valid @RequestBody User user) {
+        return R.status(userService.saveOrUpdate(user));
+    }
 
-	/**
-	* 新增或修改 用户表
-	*/
-	@PostMapping("/submit")
-	@ApiOperation(value = "新增或修改", notes = "传入user", position = 6)
-	public R submit(@Valid @RequestBody User user) {
-		return R.status(userService.saveOrUpdate(user));
-	}
+    /**
+     * 删除 用户表
+     */
+    @PostMapping("/remove")
+    @ApiOperation(value = "逻辑删除", notes = "传入id", position = 7)
+    public R remove(@ApiParam(value = "主键", required = true) @RequestParam String id) {
+        return R.status(userService.deleteLogic(Integer.parseInt(id)));
+    }
 
-	/**
-	* 删除 用户表
-	*/
-	@PostMapping("/remove")
-	@ApiOperation(value = "逻辑删除", notes = "传入id", position = 7)
-	public R remove(@ApiParam(value = "主键", required = true) @RequestParam String id) {
-		return R.status(userService.deleteLogic(Integer.parseInt(id)));
-	}
-
-
+    /**
+     * 获取用户详情
+     *
+     * @param tenantCode 租户编号
+     * @param account    用户名
+     * @param password   密码
+     * @return
+     */
+    @GetMapping("/user-info")
+    public R<UserDetail> userInfo(String tenantCode, String account, String password) {
+        return R.success(userService.userDetail(tenantCode, account, password));
+    }
 
 }

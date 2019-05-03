@@ -41,7 +41,11 @@ Floret
      ├──common-core-security   -- 公共安全模块
      ├──common-core-swagger   -- 公共接口文档模块
      ├──common-core-cloud   -- 公共外部调用基础封装
+├── floret-generator -- 代码生成
 ├── floret-gateway -- 网关文档聚合（端口：8888）
+├── floret-auth -- 认证中心（端口：8001）
+├── floret-system -- 系统模块（端口：8002）
+├── floret-user -- 用户模块（端口：8003）
 
 ```
 
