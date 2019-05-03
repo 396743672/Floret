@@ -7,6 +7,13 @@ spring:
   application:
     name: floret-gateway
   cloud:
+    nacos:
+      discovery:
+        server-addr: 139.196.120.69:8848
+      config:
+        server-addr: 139.196.120.69:8848
+        file-extension: yaml
+        prefix: floret
     gateway:
       routes:
       - id:  auth

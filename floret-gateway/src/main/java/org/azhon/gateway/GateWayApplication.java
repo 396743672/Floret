@@ -2,8 +2,6 @@ package org.azhon.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
-import org.springframework.cloud.netflix.hystrix.EnableHystrix;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 
 /**
@@ -15,8 +13,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  *
  * @author ZJB
  */
-@EnableHystrix
-@EnableScheduling
+//@EnableHystrix
+//@EnableScheduling
 @SpringCloudApplication
 public class GateWayApplication {
 
