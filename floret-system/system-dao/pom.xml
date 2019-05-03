@@ -11,5 +11,11 @@
 
     <artifactId>system-dao</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>org.azhon</groupId>
+            <artifactId>system-api</artifactId>
+            <version>${floret.version}</version>
+        </dependency>
+    </dependencies>
 </project>

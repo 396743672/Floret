@@ -45,7 +45,7 @@ public class ZdGenerator {
     /**
      * 代码生成的包名
      */
-    private static String packageName = "org.azhon.user";
+    private static String packageName = "org.azhon.system";
     /**
      * 代码后端生成的地址
      */
@@ -58,8 +58,8 @@ public class ZdGenerator {
     /**
      * 需要生成的表名(两者只能取其一)
      */
-    private static String[] includeTables = {"floret_user", "floret_tenant"};
-//    "floret_role", "floret_role_menu", "floret_menu", "floret_dept", "floret_dict",
+    private static String[] includeTables = { "floret_role", "floret_role_menu", "floret_menu", "floret_dept", "floret_dict"};
+//    "floret_role", "floret_role_menu", "floret_menu", "floret_dept", "floret_dict","floret_user", "floret_tenant"
     /**
      * 需要排除的表名(两者只能取其一)
      */
