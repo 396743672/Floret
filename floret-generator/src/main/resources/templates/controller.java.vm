@@ -7,8 +7,8 @@ import io.swagger.annotations.ApiParam;
 import lombok.AllArgsConstructor;
 import javax.validation.Valid;
 
-import org.azhon.common.support.Condition;
-import org.azhon.common.support.Query;
+import org.azhon.common.mybaits.support.Condition;
+import org.azhon.common.mybaits.support.Query;
 
 import org.azhon.common.api.R;
 import org.azhon.common.utils.Func;

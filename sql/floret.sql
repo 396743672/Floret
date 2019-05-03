@@ -18,7 +18,7 @@ CREATE TABLE `floret_user` (
   `status` int(2) DEFAULT NULL COMMENT '状态',
   `is_deleted` int(2) DEFAULT '0' COMMENT '是否已删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
 
 
 CREATE TABLE `floret_role` (
@@ -30,7 +30,7 @@ CREATE TABLE `floret_role` (
   `role_alias` varchar(255) DEFAULT NULL COMMENT '角色别名',
   `is_deleted` int(2) DEFAULT '0' COMMENT '是否已删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='权限表';
 
 
 CREATE TABLE `floret_role_menu` (
@@ -38,7 +38,7 @@ CREATE TABLE `floret_role_menu` (
   `menu_id` int(11) DEFAULT NULL COMMENT '菜单id',
   `role_id` int(11) DEFAULT NULL COMMENT '角色id',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COMMENT='权限-菜单';
 
 
 CREATE TABLE `floret_menu` (
@@ -56,7 +56,7 @@ CREATE TABLE `floret_menu` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `is_deleted` int(2) DEFAULT '0' COMMENT '是否已删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8mb4 COMMENT='菜单';
 
 
 CREATE TABLE `floret_dept` (
@@ -69,7 +69,7 @@ CREATE TABLE `floret_dept` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `is_deleted` int(2) DEFAULT '0' COMMENT '是否已删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COMMENT='部门';
 
 
 CREATE TABLE `floret_dict` (
@@ -82,4 +82,20 @@ CREATE TABLE `floret_dict` (
   `remark` varchar(255) DEFAULT NULL COMMENT '字典备注',
   `is_deleted` int(2) DEFAULT '0' COMMENT '是否已删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COMMENT='字典';
+
+CREATE TABLE `floret_tenant` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `tenant_code` varchar(12) NOT NULL COMMENT '租户编号',
+  `tenant_name` varchar(50) NOT NULL COMMENT '租户名称',
+  `linkman` varchar(20) DEFAULT NULL COMMENT '联系人',
+  `contact_number` varchar(20) DEFAULT NULL COMMENT '联系电话',
+  `address` varchar(255) DEFAULT NULL COMMENT '联系地址',
+  `create_user` int(11) DEFAULT NULL COMMENT '创建人',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_user` int(11) DEFAULT NULL COMMENT '修改人',
+  `update_time` datetime DEFAULT NULL COMMENT '修改时间',
+  `status` int(2) DEFAULT NULL COMMENT '状态',
+  `is_deleted` int(2) DEFAULT '0' COMMENT '是否已删除',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='多租户';

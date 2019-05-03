@@ -3,7 +3,7 @@
 package $!{wrapperPackage};
 
 import lombok.AllArgsConstructor;
-import org.azhon.common.support.BaseEntityWrapper;
+import org.azhon.common.mybaits.support.BaseEntityWrapper;
 import org.azhon.common.utils.BeanUtil;
 import $!{package.Entity}.$!{entity};
 #set($voPackage=$package.Entity.replace("entity","vo"))

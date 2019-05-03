@@ -45,7 +45,7 @@ public class ZdGenerator {
     /**
      * 代码生成的包名
      */
-    private static String packageName = "org.azhon.auth";
+    private static String packageName = "org.azhon.user";
     /**
      * 代码后端生成的地址
      */
@@ -58,7 +58,8 @@ public class ZdGenerator {
     /**
      * 需要生成的表名(两者只能取其一)
      */
-    private static String[] includeTables = {"hg_base_info"};
+    private static String[] includeTables = {"floret_user", "floret_tenant"};
+//    "floret_role", "floret_role_menu", "floret_menu", "floret_dept", "floret_dict",
     /**
      * 需要排除的表名(两者只能取其一)
      */
@@ -70,7 +71,7 @@ public class ZdGenerator {
     /**
      * 基础业务字段
      */
-    private static String[] superEntityColumns = {"id", "create_person", "update_person", "create_time", "update_time", "is_deleted"};
+    private static String[] superEntityColumns = {"id", "create_user", "update_user", "create_time", "update_time", "is_deleted"};
     /**
      * 是否启用swagger
      */
@@ -105,10 +106,10 @@ public class ZdGenerator {
         dsc.setDbType(DbType.MYSQL);
         dsc.setTypeConvert(new MySqlTypeConvert());
 
-        dsc.setUrl("jdbc:mysql://120.27.227.35:3306/hg?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&tinyInt1isBit=false");
+        dsc.setUrl("jdbc:mysql://139.196.120.69:3306/floret?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&tinyInt1isBit=false");
         dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("zdtest");
-        dsc.setPassword("zd_2018");
+        dsc.setUsername("root");
+        dsc.setPassword("123456");
         mpg.setDataSource(dsc);
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
@@ -124,12 +125,12 @@ public class ZdGenerator {
             strategy.setExclude(excludeTables);
         }
         //继承base
-        strategy.setSuperEntityClass("org.azhon.common.mybatis.base.BaseEntity");
+        strategy.setSuperEntityClass("org.azhon.common.mybaits.base.BaseEntity");
         strategy.setSuperEntityColumns(superEntityColumns);
-        strategy.setSuperServiceClass("org.azhon.common.mybatis.base.BaseService");
-        strategy.setSuperServiceImplClass("org.azhon.common.mybatis.base.BaseServiceImpl");
+        strategy.setSuperServiceClass("org.azhon.common.mybaits.base.BaseService");
+        strategy.setSuperServiceImplClass("org.azhon.common.mybaits.base.BaseServiceImpl");
         // 自定义 controller 父类
-        strategy.setSuperControllerClass("org.azhon.common.mybatis.base.BaseContoller");
+        strategy.setSuperControllerClass("org.azhon.common.mybaits.base.BaseContoller");
         strategy.setEntityBuilderModel(false);
         strategy.setEntityLombokModel(true);
         strategy.setControllerMappingHyphenStyle(true);
