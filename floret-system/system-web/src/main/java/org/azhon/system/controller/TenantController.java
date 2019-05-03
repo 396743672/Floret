@@ -1,5 +1,5 @@
 
-package org.azhon.user.controller;
+package org.azhon.system.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 
@@ -7,9 +7,9 @@ import org.azhon.common.api.R;
 import org.azhon.common.mybaits.base.BaseContoller;
 import org.azhon.common.mybaits.support.Condition;
 import org.azhon.common.mybaits.support.Query;
-import org.azhon.user.entity.Tenant;
-import org.azhon.user.service.ITenantService;
-import org.azhon.user.vo.TenantVO;
+import org.azhon.system.entity.Tenant;
+import org.azhon.system.service.ITenantService;
+import org.azhon.system.vo.TenantVO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiParam;
 import lombok.AllArgsConstructor;
 
 /**
- * 包名       org.azhon.user.controller
+ * 包名       org.azhon.system.controller
  * 文件名:    TenantController
  * 创建时间:  2019-05-03
  * 描述:     TODO 多租户 控制器

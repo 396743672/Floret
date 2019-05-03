@@ -1,15 +1,15 @@
-package org.azhon.user.dto;
+package org.azhon.system.dto;
 
-import org.azhon.user.entity.Tenant;
+import org.azhon.system.entity.Tenant;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * 包名      org.azhon.user.dto
+ * 包名      org.azhon.system.dto
  * 文件名:   TenantDTO
  * 创建时间:  2019-05-03
- * 描述:     TODO 数据传输对象实体类
+ * 描述:     TODO 多租户数据传输对象实体类
  *
  * @author zjb
  */

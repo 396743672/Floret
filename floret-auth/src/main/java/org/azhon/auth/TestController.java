@@ -37,6 +37,6 @@ public class TestController {
     })
     @User("add")
     public R test(String test) {
-        return R.success("");
+        return R.success("123");
     }
 }

@@ -1,5 +1,5 @@
 
-package org.azhon.user.entity;
+package org.azhon.system.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 
@@ -11,17 +11,17 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * 包名       org.azhon.user.entity
+ * 包名       org.azhon.system.entity
  * 文件名:    Tenant
  * 创建时间:  2019-05-03
- * 描述:     TODO 实体类
+ * 描述:     TODO 多租户实体类
  *
  * @author zjb
  */
 @Data
 @TableName("floret_tenant")
 @EqualsAndHashCode(callSuper = true)
-@ApiModel(value = "Tenant对象", description = "Tenant对象")
+@ApiModel(value = "Tenant对象", description = "多租户")
 public class Tenant extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
