@@ -96,8 +96,8 @@ public class UserController extends BaseContoller {
      * @param password   密码
      * @return
      */
-    @GetMapping("/user-info")
-    public R<UserDetail> userInfo(String tenantCode, String account, String password) {
+    @GetMapping("/detail")
+    public R<UserDetail> userDetail(String tenantCode, String account, String password) {
         return R.success(userService.userDetail(tenantCode, account, password));
     }
 

@@ -11,10 +11,22 @@
 
     <artifactId>floret-auth</artifactId>
     <dependencies>
+        <!--common-->
         <dependency>
             <groupId>org.azhon</groupId>
             <artifactId>common-core-boot</artifactId>
-            <version>1.0.0</version>
+            <version>${floret.version}</version>
+        </dependency>
+        <!--user api-->
+        <dependency>
+            <groupId>org.azhon</groupId>
+            <artifactId>user-api</artifactId>
+            <version>${floret.version}</version>
+        </dependency>
+        <!--spring security-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
     </dependencies>
     <build>

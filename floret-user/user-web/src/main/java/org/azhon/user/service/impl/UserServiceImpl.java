@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 
 import org.azhon.common.mybaits.base.BaseServiceImpl;
 import org.azhon.user.entity.User;
+import org.azhon.user.entity.UserDetail;
 import org.azhon.user.mapper.UserMapper;
 import org.azhon.user.service.IUserService;
 import org.azhon.user.vo.UserVO;
@@ -25,6 +26,11 @@ public class UserServiceImpl extends BaseServiceImpl<UserMapper, User> implement
 	@Override
 	public IPage<UserVO> selectUserPage(IPage<UserVO> page, UserVO user) {
 		return page.setRecords(baseMapper.selectUserPage(page, user));
+	}
+
+	@Override
+	public UserDetail userDetail(String tenantCode, String account, String password) {
+		return null;
 	}
 
 }

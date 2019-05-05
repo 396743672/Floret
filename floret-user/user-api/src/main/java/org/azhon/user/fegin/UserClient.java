@@ -20,12 +20,12 @@ public interface UserClient {
     /**
      * 获取用户信息
      *
-     * @param tenantCode     租户编号
-     * @param account  账号
-     * @param password 密码
+     * @param tenantCode 租户编号
+     * @param account    账号
+     * @param password   密码
      * @return
      */
-    @GetMapping("/user-detail")
-    R<UserDetail> userInfo(@RequestParam("tenantCode") String tenantCode, @RequestParam("account") String account, @RequestParam("password") String password);
+    @GetMapping("/user/detail")
+    R<UserDetail> userDetail(@RequestParam("tenantCode") String tenantCode, @RequestParam("account") String account, @RequestParam("password") String password);
 
 }

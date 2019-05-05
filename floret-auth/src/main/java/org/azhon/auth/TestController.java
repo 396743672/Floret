@@ -2,6 +2,7 @@ package org.azhon.auth;
 
 import org.azhon.common.api.R;
 import org.azhon.common.security.annotation.User;
+import org.azhon.user.fegin.UserClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +31,8 @@ import lombok.extern.slf4j.Slf4j;
 public class TestController {
 
 
+    private UserClient userClient;
+
     @GetMapping("/test")
     @ApiOperation(value = "测试", notes = "传入车牌号经纬度")
     @ApiImplicitParams({
@@ -37,6 +40,8 @@ public class TestController {
     })
     @User("add")
     public R test(String test) {
-        return R.success("123");
+        return R.success(userClient.userDetail("", "", ""));
     }
+
+
 }
