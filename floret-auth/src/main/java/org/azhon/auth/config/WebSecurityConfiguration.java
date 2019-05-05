@@ -12,8 +12,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import lombok.SneakyThrows;
 
 /**
- * 项目名:    SpringBlade
- * 包名       org.springblade.auth.config
+ * 项目名:    floret
+ * 包名       org.azhon.auth.config
  * 文件名:    WebSecurityConfiguration
  * 创建时间:  2019-05-03 on 19:03
  * 描述:     TODO
